@@ -24,7 +24,7 @@ Add rows for Privacy Policy, Terms of Use, Support / Contact, Official Sources &
 Apple App Store Connect:
 - Privacy Policy URL → `/privacy/`
 - Support URL → `/support/`
-- Privacy Choices URL (optional web explanation) → `/privacy/#4-personalized-advertising-and-tracking-choices` if you later add matching anchors, otherwise use `/privacy/`.
+- Privacy Choices URL (optional web explanation) → `/privacy/`. The native in-app control remains the operative Google UMP privacy-options entry point where required or available.
 
 Google Play Console:
 - Privacy Policy URL → `/privacy/`
@@ -48,7 +48,7 @@ Official sources:
 
 1. Do not send locally entered SNAP/PAN balances, WIC benefit records, transaction history, or shopping-budget values to AdMob as targeting parameters.
 2. Implement UMP/privacy choices for applicable U.S. state privacy requirements.
-3. On iOS, use App Tracking Transparency before IDFA-based tracking/personalized advertising where required. Denial must not block core app use.
+3. On iOS, do not request App Tracking Transparency, do not access IDFA for personalized advertising, and keep advertising limited and non-personalized. Reassess the code, policy, and App Store disclosures before introducing any future tracking or personalized-advertising feature.
 4. Include an in-app way to report inappropriate or age-inappropriate ads.
 5. Use platform billing for Remove Ads; use the store-provided localized price and a restore mechanism where required.
 6. Re-audit privacy disclosures if Firebase Analytics, Crashlytics, another ad mediation SDK, accounts, cloud sync, or a backend is added.
