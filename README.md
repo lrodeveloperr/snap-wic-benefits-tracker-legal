@@ -3,7 +3,7 @@
 Official public legal, privacy, support, and government-source website for **SNAP & WIC Benefits Tracker**.
 
 - Operator: **Lateef Razaq-Oyetola**, Ontario, Canada
-- Android developer name: **Gooduse Studios**
+- Android developer name: **GoodUse Studios**
 - Support: **lrodeveloperr@gmail.com**
 - Launch markets: United States and Puerto Rico
 
@@ -29,4 +29,4 @@ The site itself uses no analytics, ad scripts, cookies, or external fonts.
 
 ## Important
 
-The public documents are written for the intended final app configuration: local-first core tracker data, Google AdMob advertising, personalized ads where permitted, platform privacy controls, and a one-time Remove Ads purchase. If the final native app adds Firebase Analytics, Crashlytics, cloud sync, accounts, or another SDK that changes data handling, update the Privacy Policy and store privacy declarations before release.
+The public documents are written for the intended final app configuration: local-first core tracker data, Google AdMob limited non-personalized advertising, platform privacy controls, and a one-time Remove Ads purchase. If the final native app adds Firebase Analytics, Crashlytics, cloud sync, accounts, or another SDK that changes data handling, update the Privacy Policy and store privacy declarations before release.
