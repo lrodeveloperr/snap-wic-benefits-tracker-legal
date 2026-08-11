@@ -1,32 +1,24 @@
-# SNAP & WIC Benefits Tracker — Legal & Support Site
+# SNAP-EBT & WIC Benefits Tracker — Legal & Support Site
 
-Official public legal, privacy, support, and government-source website for **SNAP & WIC Benefits Tracker**.
+Public legal, privacy, support, and government-source website for **SNAP-EBT & WIC Benefits Tracker**.
 
-- Operator: **Lateef Razaq-Oyetola**, Ontario, Canada
+- Operator: **Lateef Razaq-Oyetola**, 36 Zorra Street, Toronto (Etobicoke), Ontario M8Z 0G5, Canada
 - Android developer name: **GoodUse Studios**
 - Support: **lrodeveloperr@gmail.com**
 - Launch markets: United States and Puerto Rico
 
 ## GitHub Pages
 
-Configure GitHub Pages to deploy from the `main` branch and `/docs` folder. The intended live base URL is:
+GitHub Pages deploys the `docs` directory from `main` at:
 
 `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/`
 
-Public pages:
+The site includes English and Puerto Rico Spanish versions of the Privacy Policy, Terms of Use, Support page, and Official Government Sources page.
 
-- `/privacy/` — Privacy Policy
-- `/terms/` — Terms of Use
-- `/support/` — Support, contact, ad reporting, and local-data deletion
-- `/official-sources/` — Official government sources and non-affiliation
-- `/es/` — Spanish landing page
-- `/es/privacidad/` — Política de Privacidad
-- `/es/terminos/` — Términos de Uso
-- `/es/soporte/` — Soporte y Contacto
-- `/es/fuentes-oficiales/` — Fuentes oficiales y no afiliación
+The site code includes no advertising, analytics, tracking scripts, site-set tracking cookies, or external fonts. GitHub Pages separately processes hosting logs, including visitor IP addresses for security, as disclosed in the Privacy Policy.
 
-The site itself uses no analytics, ad scripts, cookies, or external fonts.
+## Release alignment
 
-## Important
+The documents match the August 11, 2026 app configuration: local-first core tracker data, no app account or publisher-operated analytics/telemetry, optional default-off Google AdMob limited non-personalized advertising after a separate publisher choice, local notifications, user-initiated exports, and no subscriptions or in-app purchases.
 
-The public documents are written for the intended final app configuration: local-first core tracker data, Google AdMob limited non-personalized advertising, platform privacy controls, and a one-time Remove Ads purchase. If the final native app adds Firebase Analytics, Crashlytics, cloud sync, accounts, or another SDK that changes data handling, update the Privacy Policy and store privacy declarations before release.
+Before any release that changes data handling, SDKs, purchases, accounts, cloud synchronization, advertising, notifications, or export behavior, update the app, both language versions of the public documents, and the applicable store disclosures together.

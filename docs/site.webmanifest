@@ -1,0 +1,16 @@
+{
+  "name": "SNAP-EBT & WIC Benefits Tracker — Legal & Support",
+  "short_name": "Benefits Tracker",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#f5f7fb",
+  "icons": [
+    {
+      "src": "assets/brand-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
