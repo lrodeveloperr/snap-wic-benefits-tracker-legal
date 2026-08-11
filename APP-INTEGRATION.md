@@ -11,11 +11,19 @@ Base URL after GitHub Pages is enabled:
 - Support / Contact: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/support/`
 - Official Sources & Non-Affiliation: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/official-sources/`
 
-Recommended in-app path: **Settings → Legal & Support**.
+Recommended path for the policy and source links: **Settings → Legal & Support**.
 
-Add rows for Privacy Policy, Terms of Use, Support / Contact, Official Sources & Non-Affiliation, Privacy Choices, Report an Ad, and the existing Clear All Data control.
+Keep rows for Privacy Policy, Terms of Use, Support / Contact, Official Sources & Non-Affiliation, Privacy Choices, Report an Ad, and the existing Clear All Data control. Do not add a Benefits & Resources directory.
 
-`Privacy Choices` must invoke the native Google UMP privacy-options flow when required/available; it should not merely open this website.
+The iOS navigation must also include:
+
+- A dedicated **Remove Ads** option in the sidebar. It opens the native one-time purchase screen.
+- **Restore Purchase** in Settings. It invokes the native App Store restoration flow for the same Apple Account and must not start a new charge.
+- The advertising and independence disclosure in **App Help**, where it remains readable without being covered by the banner.
+
+`Privacy Choices` must invoke the native Google UMP privacy-options flow when required/available; it should not merely open this website. It is not an ad on/off switch and must not purchase, restore, or simulate a Remove Ads entitlement.
+
+On Android, retain the current separate, optional publisher advertising choice and the current no-subscription/no-in-app-purchase model unless a later Android release deliberately changes it and all disclosures are updated together.
 
 `Report an Ad` can open the support page or a prefilled email to `lrodeveloperr@gmail.com` with subject `SNAP & WIC Benefits Tracker - Report an Ad`.
 
@@ -50,8 +58,11 @@ Official sources:
 2. Implement UMP/privacy choices for applicable U.S. state privacy requirements.
 3. On iOS, do not request App Tracking Transparency, do not access IDFA for personalized advertising, and keep advertising limited and non-personalized. Reassess the code, policy, and App Store disclosures before introducing any future tracking or personalized-advertising feature.
 4. Include an in-app way to report inappropriate or age-inappropriate ads.
-5. Use platform billing for Remove Ads; use the store-provided localized price and a restore mechanism where required.
-6. Re-audit privacy disclosures if Firebase Analytics, Crashlytics, another ad mediation SDK, accounts, cloud sync, or a backend is added.
+5. Configure the iOS product `remove_ads_forever` as a non-consumable App Store purchase with a U.S. list price of **US$9.99**. Display StoreKit's localized price in the app rather than a hard-coded price.
+6. Treat StoreKit's verified current entitlement as authoritative. A refund, revocation, or other loss of entitlement returns the app to the ad-supported state.
+7. Keep **Restore Purchase** in Settings and make it restore the existing purchase without charging again.
+8. Clear All Data must not cancel, refund, delete, or simulate an App Store purchase or entitlement.
+9. Re-audit privacy disclosures if Firebase Analytics, Crashlytics, another ad mediation SDK, accounts, cloud sync, or a backend is added.
 
 ## Spanish / Puerto Rico URLs
 
