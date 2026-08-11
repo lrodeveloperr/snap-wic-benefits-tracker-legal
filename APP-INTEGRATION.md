@@ -58,7 +58,7 @@ Official sources:
 2. Implement UMP/privacy choices for applicable U.S. state privacy requirements.
 3. On iOS, do not request App Tracking Transparency, do not access IDFA for personalized advertising, and keep advertising limited and non-personalized. Reassess the code, policy, and App Store disclosures before introducing any future tracking or personalized-advertising feature.
 4. Include an in-app way to report inappropriate or age-inappropriate ads.
-5. Configure the iOS product `remove_ads_forever` as a non-consumable App Store purchase with a U.S. list price of **US$9.99**. Display StoreKit's localized price in the app rather than a hard-coded price.
+5. Configure the iOS product `remove_ads_lifetime` as a non-consumable App Store purchase with a U.S. list price of **US$9.99**. Display StoreKit's localized price in the app rather than a hard-coded price.
 6. Treat StoreKit's verified current entitlement as authoritative. A refund, revocation, or other loss of entitlement returns the app to the ad-supported state.
 7. Keep **Restore Purchase** in Settings and make it restore the existing purchase without charging again.
 8. Clear All Data must not cancel, refund, delete, or simulate an App Store purchase or entitlement.
