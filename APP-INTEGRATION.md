@@ -23,7 +23,7 @@ The iOS navigation must also include:
 
 `Privacy Choices` must invoke the native Google UMP privacy-options flow when required/available; it should not merely open this website. It is not an ad on/off switch and must not purchase, restore, or simulate a Remove Ads entitlement.
 
-On Android, retain the current separate, optional publisher advertising choice and the current no-subscription/no-in-app-purchase model unless a later Android release deliberately changes it and all disclosures are updated together.
+On Android, after the versioned legal gate, refresh Google's UMP consent information and request one fixed non-personalized banner on eligible screens only when Google reports that ads may be requested and no verified Remove Ads entitlement is active. There is no separate publisher ad on/off toggle. Configure `remove_ads_lifetime` as a one-time, non-consumable Google Play product; it is not a subscription. Display Google Play's localized price, provide purchase and restore controls, acknowledge completed purchases, and reconcile refund or revocation status.
 
 `Report an Ad` can open the support page or a prefilled email to `lrodeveloperr@gmail.com` with subject `SNAP & WIC Benefits Tracker - Report an Ad`.
 
@@ -62,7 +62,8 @@ Official sources:
 6. Treat StoreKit's verified current entitlement as authoritative. A refund, revocation, or other loss of entitlement returns the app to the ad-supported state.
 7. Keep **Restore Purchase** in Settings and make it restore the existing purchase without charging again.
 8. Clear All Data must not cancel, refund, delete, or simulate an App Store purchase or entitlement.
-9. Re-audit privacy disclosures if Firebase Analytics, Crashlytics, another ad mediation SDK, accounts, cloud sync, or a backend is added.
+9. On Android, configure `remove_ads_lifetime` as a one-time, non-consumable Google Play product. Use the Play-reported localized price, acknowledge the purchase, restore it through the same Google Play account, and treat refund or revocation as loss of entitlement.
+10. Re-audit privacy disclosures if Firebase Analytics, Crashlytics, another ad mediation SDK, accounts, cloud sync, or a backend is added.
 
 ## Spanish / Puerto Rico URLs
 
