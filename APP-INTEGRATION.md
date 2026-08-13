@@ -47,8 +47,8 @@ Include this visibly in the Play long description:
 Grocery Benefits Tracker is an independent budgeting and benefit-tracking app for user-entered SNAP/PAN and WIC information. It does not represent, operate on behalf of, or have an affiliation with any government or political entity. It does not connect to government benefit accounts or provide official benefit balances or eligibility determinations.
 
 Official sources:
-- USDA SNAP: https://www.fns.usda.gov/snap
-- USDA WIC: https://www.fns.usda.gov/wic
+- USDA SNAP: https://www.fna.usda.gov/snap/supplemental-nutrition-assistance-program
+- USDA WIC: https://www.fna.usda.gov/wic
 - Puerto Rico PAN — ADSEF: https://serviciosenlinea.adsef.pr.gov/programas/programa-asistencia-nutricional-pan
 - Puerto Rico WIC — Department of Health: https://www.salud.pr.gov/CMS/48
 

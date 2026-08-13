@@ -3,7 +3,7 @@
 Public legal, privacy, support, and government-source website for **Grocery Benefits Tracker**.
 
 - Operator: **Lateef Razaq-Oyetola**, 36 Zorra Street, Toronto (Etobicoke), Ontario M8Z 0G5, Canada
-- Android developer name: **GoodUse Studios**
+- Android developer name: **Gooduse Studios**
 - Support: **lrodeveloperr@gmail.com**
 - Launch markets: United States and Puerto Rico
 
@@ -13,7 +13,7 @@ The canonical production copy is published from the account Pages repository at:
 
 `https://lrodeveloperr.github.io/grocery-benefits-tracker/`
 
-This repository remains the reviewed source for the legal content. The production copy must be mirrored from `docs` without changing policy text, metadata, assets, or relative routes.
+The reviewed production content is in `site-source`. It is mirrored to the account Pages repository without changing policy text, metadata, assets, or relative routes. The `docs` directory only migrates old bookmarks to the clean canonical URL and must not be used as a store listing URL.
 
 The site includes English and Puerto Rico Spanish versions of the Privacy Policy, Terms of Use, Support page, and Official Government Sources page.
 
@@ -31,4 +31,4 @@ Before any release that changes data handling, SDKs, purchases, accounts, cloud 
 
 ## Verification
 
-Run `node scripts/verify-policy-site.mjs` before publishing. It checks all English and Puerto Rico Spanish routes, page titles, canonical/Open Graph metadata, alternate-language links, the web manifest, local links, required policy sections, and the absence of the rejected app brand and legacy public URL slug.
+Run `node scripts/verify-policy-site.mjs` before publishing `site-source`. It checks all English and Puerto Rico Spanish routes, page titles, canonical/Open Graph metadata, alternate-language links, the web manifest, local links, required policy sections, and the absence of the rejected app brand and legacy public URL slug.

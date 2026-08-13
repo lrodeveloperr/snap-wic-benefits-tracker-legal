@@ -2,7 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const repositoryRoot = path.resolve(import.meta.dirname, "..");
-const siteRoot = path.join(repositoryRoot, "docs");
+const siteDirectory = "site-source";
+const siteRoot = path.join(repositoryRoot, siteDirectory);
 const canonicalBase =
   "https://lrodeveloperr.github.io/grocery-benefits-tracker/";
 const legacyBrand = /SNAP[\u2010-\u2015-]EBT\s*(?:&|&amp;)?\s*WIC Benefits Tracker/i;
@@ -38,7 +39,7 @@ function extract(html, expression, label, file) {
 }
 
 for (const [relativeFile, route] of Object.entries(expectedPages)) {
-  const repositoryPath = path.join("docs", relativeFile);
+  const repositoryPath = path.join(siteDirectory, relativeFile);
   const html = read(repositoryPath);
   const title = extract(html, /<title>([^<]+)<\/title>/, "title", repositoryPath);
   const description = extract(
@@ -115,28 +116,62 @@ for (const [relativeFile, route] of Object.entries(expectedPages)) {
   }
 }
 
-const manifest = JSON.parse(read("docs/site.webmanifest"));
+for (const [relativeFile, route] of Object.entries(expectedPages)) {
+  const repositoryPath = path.join("docs", relativeFile);
+  const html = read(repositoryPath);
+  const expectedTarget = `${canonicalBase}${route}`;
+  const refreshTarget = extract(
+    html,
+    /<meta http-equiv="refresh" content="0; url=([^"]+)">/,
+    "legacy-route migration target",
+    repositoryPath,
+  );
+  const canonical = extract(
+    html,
+    /<link rel="canonical" href="([^"]+)">/,
+    "legacy-route canonical URL",
+    repositoryPath,
+  );
+  if (refreshTarget !== expectedTarget)
+    fail(`${repositoryPath}: migration target is ${refreshTarget}`);
+  if (canonical !== expectedTarget)
+    fail(`${repositoryPath}: canonical URL is ${canonical}`);
+  if (!html.includes('<meta name="robots" content="noindex,follow">'))
+    fail(`${repositoryPath}: legacy route is not excluded from indexing`);
+  if (legacyBrand.test(html))
+    fail(`${repositoryPath}: exact rejected app brand remains`);
+  if (html.toLowerCase().includes(legacySlug))
+    fail(`${repositoryPath}: legacy slug appears in migration content`);
+  if (/<script\b/i.test(html))
+    fail(`${repositoryPath}: migration page uses an unexpected script`);
+}
+
+const manifest = JSON.parse(read(`${siteDirectory}/site.webmanifest`));
 if (manifest.name !== "Grocery Benefits Tracker — Legal & Support")
-  fail("docs/site.webmanifest: incorrect name");
+  fail(`${siteDirectory}/site.webmanifest: incorrect name`);
 if (manifest.id !== "./" || manifest.start_url !== "./" || manifest.scope !== "./")
-  fail("docs/site.webmanifest: id, start_url, or scope escapes the clean site path");
+  fail(`${siteDirectory}/site.webmanifest: id, start_url, or scope escapes the clean site path`);
 if (manifest.icons?.[0]?.src !== "assets/brand-logo.png")
-  fail("docs/site.webmanifest: incorrect icon path");
+  fail(`${siteDirectory}/site.webmanifest: incorrect icon path`);
 
 const textPaths = [
   "README.md",
   "APP-INTEGRATION.md",
-  "docs/site.webmanifest",
-  ...Object.keys(expectedPages).map((file) => path.join("docs", file)),
+  `${siteDirectory}/site.webmanifest`,
+  ...Object.keys(expectedPages).map((file) => path.join(siteDirectory, file)),
 ];
 for (const textPath of textPaths) {
   const text = read(textPath);
   if (legacyBrand.test(text)) fail(`${textPath}: exact rejected app brand remains`);
   if (text.toLowerCase().includes(legacySlug))
     fail(`${textPath}: legacy public slug remains`);
+  if (text.includes("fns.usda.gov"))
+    fail(`${textPath}: superseded USDA FNS URL remains`);
+  if (text.includes("GoodUse Studios"))
+    fail(`${textPath}: Google Play developer-name casing is incorrect`);
 }
 
-const privacy = read("docs/privacy/index.html");
+const privacy = read(`${siteDirectory}/privacy/index.html`);
 for (const heading of [
   "Information stored in the tracker",
   "Identity and credentials the tracker does not request",
@@ -172,7 +207,7 @@ for (const disclosure of [
     fail(`English privacy policy: missing disclosure “${disclosure}”`);
 }
 
-const terms = read("docs/terms/index.html");
+const terms = read(`${siteDirectory}/terms/index.html`);
 for (const heading of [
   "Acceptance of these Terms",
   "Independent application",
@@ -185,6 +220,23 @@ for (const heading of [
   "Entire agreement and contact",
 ]) {
   if (!terms.includes(heading)) fail(`English terms: missing ${heading}`);
+}
+
+for (const file of [
+  `${siteDirectory}/official-sources/index.html`,
+  `${siteDirectory}/es/fuentes-oficiales/index.html`,
+]) {
+  const sources = read(file);
+  for (const currentUrl of [
+    "https://www.fna.usda.gov/snap/supplemental-nutrition-assistance-program",
+    "https://www.fna.usda.gov/snap/retailer-locator",
+    "https://www.fna.usda.gov/wic",
+  ]) {
+    if (!sources.includes(currentUrl))
+      fail(`${file}: missing current USDA source ${currentUrl}`);
+  }
+  if (!sources.includes("FNA") || !sources.includes("FNS"))
+    fail(`${file}: missing USDA FNA/FNS transition explanation`);
 }
 
 if (failures.length) {
