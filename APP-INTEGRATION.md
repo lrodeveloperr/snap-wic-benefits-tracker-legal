@@ -2,14 +2,14 @@
 
 Base URL after GitHub Pages is enabled:
 
-`https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/`
+`https://lrodeveloperr.github.io/grocery-benefits-tracker/`
 
 ## URLs to place inside the Android APK and iOS app
 
-- Privacy Policy: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/privacy/`
-- Terms of Use: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/terms/`
-- Support / Contact: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/support/`
-- Official Sources & Non-Affiliation: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/official-sources/`
+- Privacy Policy: `https://lrodeveloperr.github.io/grocery-benefits-tracker/privacy/`
+- Terms of Use: `https://lrodeveloperr.github.io/grocery-benefits-tracker/terms/`
+- Support / Contact: `https://lrodeveloperr.github.io/grocery-benefits-tracker/support/`
+- Official Sources & Non-Affiliation: `https://lrodeveloperr.github.io/grocery-benefits-tracker/official-sources/`
 
 Recommended path for the policy and source links: **Settings → Legal & Support**.
 
@@ -67,7 +67,7 @@ Official sources:
 
 ## Spanish / Puerto Rico URLs
 
-- Política de Privacidad: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/es/privacidad/`
-- Términos de Uso: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/es/terminos/`
-- Soporte y Contacto: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/es/soporte/`
-- Fuentes oficiales y no afiliación: `https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/es/fuentes-oficiales/`
+- Política de Privacidad: `https://lrodeveloperr.github.io/grocery-benefits-tracker/es/privacidad/`
+- Términos de Uso: `https://lrodeveloperr.github.io/grocery-benefits-tracker/es/terminos/`
+- Soporte y Contacto: `https://lrodeveloperr.github.io/grocery-benefits-tracker/es/soporte/`
+- Fuentes oficiales y no afiliación: `https://lrodeveloperr.github.io/grocery-benefits-tracker/es/fuentes-oficiales/`

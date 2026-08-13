@@ -7,11 +7,13 @@ Public legal, privacy, support, and government-source website for **Grocery Bene
 - Support: **lrodeveloperr@gmail.com**
 - Launch markets: United States and Puerto Rico
 
-## GitHub Pages
+## Canonical public site
 
-GitHub Pages deploys the `docs` directory from `main` at:
+The canonical production copy is published from the account Pages repository at:
 
-`https://lrodeveloperr.github.io/snap-wic-benefits-tracker-legal/`
+`https://lrodeveloperr.github.io/grocery-benefits-tracker/`
+
+This repository remains the reviewed source for the legal content. The production copy must be mirrored from `docs` without changing policy text, metadata, assets, or relative routes.
 
 The site includes English and Puerto Rico Spanish versions of the Privacy Policy, Terms of Use, Support page, and Official Government Sources page.
 
@@ -19,10 +21,14 @@ The site code includes no advertising, analytics, tracking scripts, site-set tra
 
 ## Release alignment
 
-The documents match the August 11, 2026 app configurations: local-first core tracker data, no app account or publisher-operated analytics/telemetry, local notifications, and user-initiated exports.
+The documents match the August 13, 2026 app configurations: local-first core tracker data, no app account or publisher-operated analytics/telemetry, local notifications, and user-initiated exports.
 
 - **iOS:** Without a verified one-time Remove Ads entitlement, the app may request one fixed non-personalized Google AdMob banner when Google permits an ad request. The non-consumable Remove Ads product has a U.S. list price of **US$9.99**, while the app displays the App Store's localized price. Purchase is available from the sidebar, restoration is in Settings, and there is no subscription. Privacy Choices manages Google's applicable advertising-data choices; it is not an ad-visibility or purchase control.
 - **Android:** Without a verified one-time Remove Ads entitlement, the app may request one fixed non-personalized Google AdMob banner on eligible screens after the legal gate and Google's required privacy process. **Remove Ads Forever** is a one-time, non-consumable Google Play purchase (product ID `remove_ads_lifetime`); it is not a subscription. Google Play displays the applicable localized price and manages purchase, restoration, refund, and revocation status.
 - **Resources:** The app does not include a Benefits & Resources directory. Official Government Sources and the independent-app disclosures remain available.
 
 Before any release that changes data handling, SDKs, purchases, accounts, cloud synchronization, advertising, notifications, or export behavior, update the app, both language versions of the public documents, and the applicable store disclosures together.
+
+## Verification
+
+Run `node scripts/verify-policy-site.mjs` before publishing. It checks all English and Puerto Rico Spanish routes, page titles, canonical/Open Graph metadata, alternate-language links, the web manifest, local links, required policy sections, and the absence of the rejected app brand and legacy public URL slug.
