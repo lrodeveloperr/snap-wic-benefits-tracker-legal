@@ -25,7 +25,7 @@ The iOS navigation must also include:
 
 On Android, after the versioned legal gate, refresh Google's UMP consent information and request one fixed non-personalized banner on eligible screens only when Google reports that ads may be requested and no verified Remove Ads entitlement is active. There is no separate publisher ad on/off toggle. Configure `remove_ads_lifetime` as a one-time, non-consumable Google Play product; it is not a subscription. Display Google Play's localized price, provide purchase and restore controls, acknowledge completed purchases, and reconcile refund or revocation status.
 
-`Report an Ad` can open the support page or a prefilled email to `lrodeveloperr@gmail.com` with subject `SNAP & WIC Benefits Tracker - Report an Ad`.
+`Report an Ad` can open the support page or a prefilled email to `lrodeveloperr@gmail.com` with subject `Grocery Benefits Tracker - Report an Ad`.
 
 ## Store console URLs
 
@@ -44,7 +44,7 @@ Include this visibly in the Play long description:
 
 **Government information disclaimer**
 
-SNAP & WIC Benefits Tracker is an independent budgeting and benefit-tracking app. It does not represent, operate on behalf of, or have an affiliation with any government or political entity. It does not connect to government benefit accounts or provide official benefit balances or eligibility determinations.
+Grocery Benefits Tracker is an independent budgeting and benefit-tracking app for user-entered SNAP/PAN and WIC information. It does not represent, operate on behalf of, or have an affiliation with any government or political entity. It does not connect to government benefit accounts or provide official benefit balances or eligibility determinations.
 
 Official sources:
 - USDA SNAP: https://www.fns.usda.gov/snap
