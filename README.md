@@ -1,6 +1,6 @@
-# SNAP-EBT & WIC Benefits Tracker — Legal & Support Site
+# Grocery Benefits Tracker — Legal & Support Site
 
-Public legal, privacy, support, and government-source website for **SNAP-EBT & WIC Benefits Tracker**.
+Public legal, privacy, support, and government-source website for **Grocery Benefits Tracker**.
 
 - Operator: **Lateef Razaq-Oyetola**, 36 Zorra Street, Toronto (Etobicoke), Ontario M8Z 0G5, Canada
 - Android developer name: **GoodUse Studios**
